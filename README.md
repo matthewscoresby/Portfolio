@@ -1,20 +1,15 @@
 # Overview
+This piece of software prints hello world in the terminal
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+I made this to demonstrate my understanding of python.
 
-{Provide a description of your software}
-
-{Describe your purpose for creating this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a one minute demo of the software running and a walkthrough of the code.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Python Demo Video](https://youtu.be/1RU4ALbHV-o)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+I used Visiual Studio Code to create this software
 
-{Describe the programming language that you used}
+I used Python to program this piece of software
 
 # Useful Websites
 * [N/A](N/A)
