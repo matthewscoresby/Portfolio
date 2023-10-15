@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathuno - Uno By Matthew</title>
+    <link rel="stylesheet" href="style07.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Comme:wght@400;500&family=Russo+One&family=Sigmar&family=Sono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+    // FIREBASE
+    const firebaseConfig = {
+      apiKey: "AIzaSyC_MLwGT3exprkMI8xhf9soGPuhxb7FcrQ",
+      authDomain: "onlinemultiplayergame.firebaseapp.com",
+      databaseURL: "https://onlinemultiplayergame-default-rtdb.firebaseio.com",
+      projectId: "onlinemultiplayergame",
+      storageBucket: "onlinemultiplayergame.appspot.com",
+      messagingSenderId: "1021964506777",
+      appId: "1:1021964506777:web:611e39f10cde5e978fca08"
+    };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="script07.js"></script>
+</head>
+<body>
+
+    <div id="loading-screen" class="loading">
+        <h1 style="color: #ffffff; font-size: 100px;">Mathuno</h1>
+        <div class="loader"></div>
+        <p style="color: #ffffff;">Loading...</p>
+    </div>
+
+    <div id="content" class="hidden">
+        <div id="BeginMenu" class="PopupBackground">
+            <div class="PopupBox" id="BeginPopupBox">
+                <h3 id="PopUpTitle">MATHUNO</h3>
+                <h3 id="ErrorText"></h3>
+    
+                <input type="text" id="NameInput" placeholder = "UserName" class="PopUpInput"><br><br>
+                <button id="NameButton" class="PopUpbtn btn"  onclick="ChangeName()">CHANGE</button>
+                
+                <input type="text" id="JoinInput" placeholder = "GameID" class="PopUpInput"><br><br>
+                <button id="JoinButton" class="PopUpbtn btn" onclick="Join()">JOIN</button>
+    
+                <button id="HostButton" class="PopUpbtn btn" onclick="Host()">HOST</button>
+            </div>
+        </div> 
+
+        <div id="EndMenu" class="PopupBackground">
+            <div class="PopupBox AnimatedGradient">
+                <h3 id="PopUpTitle">GAME OVER!</h3>
+    
+                <h3 id="EndGamePlayerName">Matthew<br>Wins!</h3>
+                <h3 id="ThankYouText"> Thanks for Playing!</h3>
+    
+                <button id="PlayAgainButton" class="PopUpbtn btn" onclick="PlayAgain()">Play Again?</button>
+                <button id="LeaveGame" class="PopUpbtn btn" onclick="Leave()">Leave Game</button>
+            </div>
+        </div> 
+
+        <div id="ColorMenu" class="PopupBackground">
+            <div class="ColorPopupBox">
+                <h3 id="PopUpTitle">Choose Color!</h3>
+                <button class="btn colorButton greenButton" onclick="changeColor('green')"> Green </button>
+                <button class="btn colorButton redButton" onclick="changeColor('red')"> Red </button>
+                <button class="btn colorButton blueButton" onclick="changeColor('blue')"> Blue </button>
+                <button class="btn colorButton yellowButton" onclick="changeColor('yellow')"> Yellow </button>
+            </div>
+        </div> 
+
+        <div id="GameBoard">
+    
+            <h1 class="GameHeaderText"> Mathuno</h1>
+            <h1 id="GameID">GameID: </h1>
+            <button id="CopyLinkButton" class=" btn" onclick="copyLink()"> Copy Game Link </button>
+            <button id="StartButton" class="btn" onclick="startGame()"> START </button>
+            <button id="LeaveGameButton" class="btn" onclick="Leave()">Leave Game</button>
+
+            <div id="OrderSpin" class="spin right hidden">
+                <span></span>
+            </div>
+        
+            <div id="Player1" data-player-id="" class="PlayerSpot Player1"></div>
+    
+            <div id="Player2" data-player-id=""  class="PlayerSpot Player2"></div>
+    
+            <div id="Player3" data-player-id=""  class="PlayerSpot Player3"></div>
+    
+            <div id="Player4" data-player-id=""  class="PlayerSpot Player4"></div>
+    
+            <div id="Player5" data-player-id=""  class="PlayerSpot Player5"></div>
+    
+            <div id="Player6" data-player-id=""  class="PlayerSpot Player6"></div>
+
+            <div id="Player7" data-player-id=""  class="PlayerSpot Player7"></div>
+    
+            <div id="Player8" data-player-id=""  class="PlayerSpot Player8"></div>
+    
+            <div id="Player9" data-player-id=""  class="PlayerSpot Player9">
+            </div>
+    
+            <div class="card backOfCard TopCard selectableCard" onclick="drawCard()">
+                <img src="./images/besmot.png" alt="mathuno" class="Cardimg"> 
+            </div>
+    
+            <div class="CardStack">
+                <img src="./images/CardStack.png" alt="reverse" class="Stackimg">
+            </div>
+    
+            <div id="DrawAmountTextDIV"class="DrawAmount">
+                <h3 id="DrawAmountText" class="CardAmountText">0</h3>
+            </div>
+            
+            <div class="DiscardCard" id="DiscardCard" >
+            </div>
+    
+            <div class="DiscardCardStack">
+                <img src="./images/DiscardCardStack.png" alt="reverse" class="DiscardStackimg">
+            </div>
+            <div class="playerCards" id="playerCards">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
