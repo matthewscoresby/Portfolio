@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&amp;family=Comme:wght@400;500&amp;family=Sigmar&amp;family=Sono:wght@400;600&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="PetArea">
+
+        <div class="Progressbar" id="health">
+            <h5 class="barTitle">HEALTH</h5>
+            <div id="healthBar" class="outsideBar">
+                <div id="healthProgress" class="insideBar"></div>
+            </div>
+        </div>
+
+        <div class="Progressbar" id="mana">
+            <h5 class="barTitle">MANA</h5>
+            <div id="manaBar" class="outsideBar">
+                <div id="manaProgress" class="insideBar"></div>
+            </div>
+        </div>
+
+        <div class="Progressbar" id="happiness">
+            <h5 class="barTitle">HAPPINESS</h5>
+            <div id="happinessBar" class="outsideBar">
+                <div id="happinessProgress" class="insideBar"></div>
+            </div>
+        </div>
+
+        <div id="foodBucket" class="">
+            <img id="foodImg" src="./images/Food.png">
+        </div>
+        <div id="Stats">
+
+            <div id="PetInfo" class="Info">
+                <text class="StatsNameText">PET NAME: </text>
+                <text id="PetName" class="StatsValueText">Greg</text>
+    
+                <text class="StatsNameText">DAYS SURVIVED: </text>
+                <text id="DaysSurvived"class="StatsValueText">Greg</text>
+    
+                <text class="StatsNameText">BATTLES WON:</text>
+                <text id="BattlesWon" class="StatsValueText">0</text>
+            </div>
+
+            <div id="ResourceInfo" class="Info">
+                <text class="StatsNameText">GOLD:</text>
+                <text id="Gold" class="StatsValueText">0</text>
+    
+                <text class="StatsNameText">FOOD:</text>
+                <text id="Food" class="StatsValueText">0</text>
+    
+                <text class="StatsNameText">MANA:</text>
+                <text id="Mana" class="StatsValueText">0</text>
+            </div>
+            
+        </div>
+
+        <div id="emitter"></div>
+        <img id="petImg" src="./images/Egg.gif">
+    </div>
+    <div class="menu">
+        <form id="PetNameForm" class="">
+            <input name="petName" id="petNameInput" placeholder="Pet Name">
+        </form>
+        <button class="btn" id="Feedbtn">FEED</button>
+        <button class="btn" id="battlebtn">BATTLE</button>
+        <button class="btn" id="Manabtn">MANA</button>
+    </div>
+</body>
+</html>
