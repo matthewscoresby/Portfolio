@@ -1,0 +1,21 @@
+# Overview
+
+This is a website that I created as a placeholder. People have been asking for examples of my websites and I wanted to make my website more profetional. I also wanted people to be able to contact me through the website. I added an email submission form to do this with javascript.
+
+[Software Demo Video](https://youtu.be/a76vtDaoB7Y)
+
+# Development Environment
+
+I used javascript to create the backend of this website. I used Firebase to send the email from the website. The way that this is done is I updated the firebase database with information which is then used by a firebase extension to send the email.
+
+# Useful Websites
+
+- [Youtube - Firebase Email-Send Email Using Firebase](https://www.youtube.com/watch?v=1nsnNLLnlrg)
+
+# Future Work
+
+{Make a list of things that you need to fix, improve, and add in the future.}
+
+- Make the rotating projects view have a timeline so you can go to other projects
+- Add more content
+- Make the base section more clear in its message
