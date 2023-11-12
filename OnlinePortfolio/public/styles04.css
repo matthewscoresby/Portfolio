@@ -1,0 +1,471 @@
+body {
+    margin: 0;
+    font-family: 'Patua One', cursive;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.Header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+#myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#WebsiteInfo {
+    margin-top: 40px;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.Button {
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    width:300px;
+    height:75px;
+    border-radius: 10px;
+    border: 5px solid rgb(150, 255, 255);
+    background-color: rgba(100, 100, 100, .3);
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.Button:hover {
+    animation: HeaderButton 2s ease-in-out infinite alternate;
+}
+
+.Section {
+    align-items: center;
+    width: 100%;
+}
+
+.Img {
+    width: 100%;
+    border: solid black 5px;
+    border-radius: 20px;
+}
+
+.Text {
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    padding: 50px;
+    padding-top: 10px;
+    line-height: 1.8;
+}
+
+.FirstSection {
+    display: flex;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1700px;
+    margin: auto;
+}
+
+#MyPicture {
+    width: 500px;
+    padding: 50px;
+    margin: auto;
+}
+
+#AboutMeBox {
+    display: grid;
+    grid-template-rows: 100px 400px;
+    padding-right: 100px;
+}
+
+#AboutMeHeader {
+    font-size: 40px;
+    padding: 10px;
+}
+
+#AboutMeText {
+    font-size: 30px;
+    font-weight: 100;
+    margin: auto;
+    padding: 10px;
+}
+
+.QouteSection {
+    display: flex;
+    height: 300px;
+    text-align: center;
+}
+
+#qouteText {
+    font-size: 30px;
+    font-weight: 100;
+    margin: auto;
+    padding: 10px;
+}
+
+.ThirdSection {
+    background-image: linear-gradient(black, rgb(3, 31, 38));
+}
+
+#ProjectSectionBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 400px 200px;
+    padding-left: 100px;
+    color: white;
+    font-weight: 100;
+    max-width: 1500px;
+    margin: auto;
+    transition: opacity 2s;
+}
+
+#pastProjectsText {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 50px;
+    font-weight: 100;
+    padding-top: 50px;
+}
+
+#ProjectPicture {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    width: 500px;
+    padding: 50px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.pixelatedPicture {
+    image-rendering: pixelated;
+}
+
+#ProjectHeader {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 10px;
+}
+
+#ProjectText {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: 30px;
+    font-weight: 100;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+#ProjectButton {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SecondSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 400px;
+    background-image: linear-gradient(black, rgb(3, 31, 38));
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 500px;
+}
+
+#dyamicbenifitsText {
+    grid-column: 1/-1;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.SecondSectionImage {
+    height: 700px;
+    object-fit: cover;
+    grid-column: 1/3;
+    border: 10px solid black;
+}
+
+.Tile {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    display: grid;
+    background-color:white;
+    border-radius: 70px;
+    border: solid 5px grey;
+    transition: height .7s;
+}
+
+.Tile:hover {
+    height: 350px;
+    width: 350px;
+}
+
+.Tile:hover .TileTitle {
+    opacity: 1;
+    font-size: 25px;
+}
+
+.MiddleTile {
+    width: 400px;
+    height: 400px;
+}
+
+.TileTitle {
+    text-align: center;
+    font-size: 0px;
+    padding: 0;
+    margin: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 0px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.IconImg {
+    width: 200px;
+    margin: auto;
+}
+
+.Footer {
+    text-align: center;
+    font-size: 30px;
+    background-color: rgb(255, 255, 255);
+    height: 80px;
+}
+
+#CopyRight {
+    color: rgb(0, 0, 0);
+}
+
+/* Styles for the popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    z-index: 2;
+    display: none;
+}
+
+.popup-content {
+    height: 360px;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 300px;
+    border-radius: 10px;
+    border: 5px solid rgb(150, 255, 255);
+    background-color: rgba(100, 100, 100, .6);
+}
+
+#EmailForm {
+    margin-top: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 30px 30px 180px 50px ;
+
+    grid-gap: 20px;
+}
+
+.inputBox {
+    margin: auto;
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border: solid black;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+#nameInput {
+    grid-row: 1/2;
+    grid-column: 1/3;
+}
+
+#emailInput {
+    grid-row: 2/3;
+    grid-column: 1/3;
+}
+
+#ConfermationEmail{
+    grid-row: 3/4;
+    grid-column: 1/2;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+#messageInput {
+    grid-row: 3/4;
+    grid-column: 1/3;
+    height: 170px;
+    display: inline-flex;
+    padding-top: 10px;
+}
+
+.inputButton {
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    border-radius: 10px;
+    border: solid black;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    grid-row: 4/5; 
+    transition: transform .5s;
+}
+
+.inputButton:hover {
+    transform: scale(1.1);
+}
+
+#sendmessage {
+    background-color: gray;
+}
+
+#closePopup {
+    background-color: rgb(239, 68, 68);
+}
+
+
+
+@keyframes HeaderButton {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.1);}
+    100% { transform: scale(1);}
+}
+
+@media (max-width: 2000px) {
+    .SecondSection {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px repeat(2, 400px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .SecondSection {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px repeat(3, 400px);
+    }
+
+    .FirstSection {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #AboutMeBox {
+        padding: 40px;
+        grid-template-rows: 120px 450px;
+        
+    }
+
+    #ProjectSectionBox {
+        grid-template-columns: 1fr;
+        grid-template-rows: 550px 20px 300px 100px;
+        padding: 20px;
+    }
+
+    #ProjectBox {
+        padding: 40px;
+    }
+
+    #ProjectPicture {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    
+    #ProjectHeader {
+        grid-row: 2/3;
+        margin-top: 0px;
+    }
+    
+    #ProjectText {
+        grid-row: 3/4;
+    }
+    
+    #ProjectButton {
+        grid-row: 4/5;
+    }
+}
+@media (max-width: 768px) {
+    .popup-content {
+        margin-top: 10px;
+    }
+    #WebsiteInfo{
+        font-size: 30px;
+    }
+    .SecondSection {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px repeat(6, 400px);
+    }
+    #dyamicbenifitsText{
+        font-size: 30px;
+    }
+    .ThirdSection {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px repeat(2, 400px);
+    }
+    #MyPicture {
+        width: 90%;
+        padding: 10px;
+        margin: auto;
+    }
+
+    #AboutMeBox {
+        padding: 0px;
+    }
+
+    #ProjectSectionBox {
+        grid-template-columns: 1fr;
+        grid-template-rows: 500px 70px 300px 100px;
+        padding: 20px;
+    }
+
+    #ProjectPicture {
+        width: 70%;
+        padding: 10px;
+        margin: auto;
+    }
+
+    .FirstSection {
+        margin-bottom: 70px;
+    }
+    #AboutMeHeader {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    #ProjectSectionBox {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 70px 400px 100px;
+        padding: 20px;
+    }
+}

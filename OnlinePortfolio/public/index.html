@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property=’og:title’ content='Matthew Scoresby - Marketing Programmer'/>
+    <meta property=’og:image’ content='./images/MatthewScoresby.jpg'>
+    <meta property=’og:description’ content='Interested in strenthening your businesses web presence?'/>
+    <meta property=’og:url’ content='https://matthewscoresby.com/'/>
+    <meta property='og:image:width' content='1000' />
+    <meta property='og:image:height' content='1000' />
+
+    <meta name="description" content="Matthew Scoresby - Marketing Programmer"/>
+    <meta name="image" content="./images/MatthewScoresby.jpg"/>
+    <link rel="apple-touch-icon" href="./images/MatthewScoresby.jpg" type="image/png" sizes="144x144"/><link>
+
+    <title>Matthew Scoresby</title>
+    <link rel="stylesheet" href="styles04.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js'
+
+        // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js'
+
+        // Add Firebase products that you want to use
+        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js'
+        import { getFirestore, collection, addDoc} from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js'
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyAbmxdPDH7pjEhzQlQRCb4Y2N9_tUxPayA",
+        authDomain: "matthewscoresby-f7ce8.firebaseapp.com",
+        databaseURL: "https://matthewscoresby-f7ce8-default-rtdb.firebaseio.com",
+        projectId: "matthewscoresby-f7ce8",
+        storageBucket: "matthewscoresby-f7ce8.appspot.com",
+        messagingSenderId: "1072237585737",
+        appId: "1:1072237585737:web:6c2f31e0481c139a62e698"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const collectionRef = collection(db, "mail");
+
+        async function submitForm(e) {
+            let nameInput = document.getElementById("nameInput");
+            let emailInput = document.getElementById("emailInput");
+            let messageInput = document.getElementById("messageInput");
+
+            let name = nameInput.value;
+            let email = emailInput.value;
+            let message = messageInput.value;
+
+            document.getElementById("EmailForm").innerHTML = 
+            `
+            <text id="ConfermationEmail">Your Email has been Sent! <br> Thanks for Reaching Out!</text>
+            <button id="closePopup" class="inputButton">Close</button>
+            `;
+
+            await sendMessage(name, email, message)
+        }
+
+        async function sendMessage(name, email, message)
+        {
+            try {
+                const docRef = await addDoc(collectionRef, {
+                to: [email, "support@matthewscoresby.com"],
+                message: {
+                    subject: "EMAIL FROM MATTHEWSCORESBY.COM!",
+                    text: message,
+                    html: message + "<br><br>NAME: " + name + "<br>EMAIL: " + email,
+                }
+            });
+            console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+        }
+
+        window.addEventListener("load", (event) => {
+        const submitEmail = document.getElementById("sendmessage");
+        submitEmail.addEventListener("pointerdown", submitForm)
+        });
+
+    </script>
+
+    <script src="script01.js"></script>
+</head>
+<body>
+    <header class="Header">
+        <video autoplay muted loop id="myVideo">
+            <source src="UpdatedVideo.mp4" type="video/mp4">
+        </video>
+        <div id="WebsiteInfo">
+            <h1>Matthew Scoresby</h1>
+            <button id="GetStartedButton" class="Button"> Contact Me </button>
+        </div>
+    </header>
+    <div class="pageBody">
+
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <form id="EmailForm">
+                    <input id="nameInput" class="inputBox" type="text" name="name" placeholder="Your Name" required>
+                    <input id="emailInput" class="inputBox" type="email" name="email" placeholder="Your Email" required>
+                    <textarea  id="messageInput" class="inputBox" type="" name="message" placeholder="Message" required></textarea>
+                    <button id="sendmessage" class="inputButton" type="submit">Send</button>
+                    <button id="closePopup" class="inputButton">Close</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="Section FirstSection">
+            <div id="MyPicture"> 
+                <img src="./images/MatthewScoresby.jpg" class="Img">
+            </div>
+            <div id="AboutMeBox">
+                <h2 id="AboutMeHeader"> A Marketing Programmer </h2>
+                <text id="AboutMeText"> I'm graduating from BYUI with a bachelors degree in Business Marketing and a Minor in Computer programming. <br> <br>My expertise is in web development and SEO. If you are an entreprenuer who would like to improve your web presence contact me! </text>
+            </div>
+        </div>
+
+        <div class="Section ThirdSection">
+            <h1 id="pastProjectsText">Past Projects</h1>
+            <div id="ProjectSectionBox">
+                <h2 id="ProjectHeader"> Mathuno </h2>
+                <text id="ProjectText"> I wanted to learn more about databases by doing a multiplayer game with this one. I also wanted to learn how to program in JavaScript, so this was all done in CSS, HTML, and JavaScript. </text>
+                <button class="Button" onClick="VisitProjectWebsite('https://mathuno.com/')"> Mathuno</button>
+                <div id="ProjectPicture"> 
+                    <img src="./images/Mathuno.png" class="Img">
+                </div>
+            </div>
+        </div>
+
+        <div class="Section QouteSection">
+            <text id="qouteText"> "I'm just a simple Marketing Coder trying to make my way in the digital universe." </text>
+        </div>
+
+        <div class="Section SecondSection">
+            <h1 id="dyamicbenifitsText">Benifits of a Dynamic Website</h1>
+            <div class="Tile">
+                <img class="IconImg" src="./images/CartIcon.png" alt="Cart Icon">
+                <a class="TileTitle">Payment Processing</a>
+            </div>
+            <div class="Tile">
+                <img class="IconImg" src="./images/ProfileIcon.png" alt="Cart Icon">
+                <a class="TileTitle">User Accounts</a>
+            </div>
+            <div class="Tile">
+                <img class="IconImg" src="./images/ChatIcon.png" alt="Cart Icon">
+                <a class="TileTitle">Online Messaging</a>
+            </div>
+            <div class="Tile">
+                <img class="IconImg" src="./images/CalanderIcon.png" alt="Cart Icon">
+                <a class="TileTitle">Scheduling System</a>
+            </div>
+            <div class="Tile">
+                <img class="IconImg" src="./images/FormIcon.png" alt="Cart Icon">
+                <a class="TileTitle">User Forms</a>
+            </div>
+            <div class="Tile">
+                <img class="IconImg" src="./images/wifi.png" alt="Cart Icon">
+                <a class="TileTitle">Real-time Collaboration</a>
+            </div>
+        </div>
+
+        <div class="Section Footer">
+            <h5 id="CopyRight">© 2023 Matthew Scoresby. All Rights Reserved</h5>
+        </div>
+    </div>
+</body>
+</html>
