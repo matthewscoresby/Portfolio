@@ -1,0 +1,22 @@
+# Overview
+
+This is a calculator app that I created to learn how to use Kotlin. I also wanted to provide a simpler calculator that a child would be able to use. One funcitonality that I added to make it easier for a young person to use was I showed the calculation happing so that they would learn what was happening.
+
+[Software Demo Video](https://youtu.be/g0xzGUwRNDI)
+
+# Development Environment
+
+I used Android Studios and Kotlin to complete this project
+
+# Useful Websites
+
+- [YouTube](https://www.youtube.com/watch?v=G7D0cVDP3q8)
+- [YouTube](https://www.youtube.com/watch?v=QQa6Pt9AtRE&t=79s)
+- [YouTube](https://www.youtube.com/watch?v=AdlxIdYus14)
+- [Stack Overflow](https://stackoverflow.com/questions/70107632/android-studio-mainactivity-kt-cant-reference-ids-in-main-activity-xml)
+
+# Future Work
+
+- Add a title
+- Add more calculations
+- Add history
